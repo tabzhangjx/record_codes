@@ -1,8 +1,0 @@
-#include <iostream>
-using namespace std;
-
-int main(int argc, const char * argv[]) {
-    int oula[100000000];
-    int i=0,a=0;
-    return 0;
-}
