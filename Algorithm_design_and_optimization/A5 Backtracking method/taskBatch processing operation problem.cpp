@@ -30,7 +30,7 @@ int main(){
 		objects[i].b=false;
 		order[i]=NULL;
 	}
-
+	
 
 
 	return 0;
