@@ -2,18 +2,35 @@
 #include <limit.h>
 using namespace std;
 
+int n,T;
 int pre=new int[n];
 int MINCOST=INT_MAX;
 bool* visit=new bool[n];
-void search(int** edge,int n){
+int edge[1002][1002];
 
+int check(){
+	int flag=true;
+	for(int i=0;i<n;i++){
+		if()
+	}
+	return
+}
+void search(){
+	for(int i=0;i<n;i++){
+		if(visit[i]=0){
+			visit[i]=1;
+			if(check()){
+				
+			}
+			else{
+				
+			}
+		}
+	}
 
 
 }
 int main(){
-
-	int edge[1002][1002];
-	int n,T;
 	cin>>n>>T;
 	for(int i=0;i<n;i++){
 		pre[i]=-1;
@@ -31,6 +48,6 @@ int main(){
 	}
 	delete node1,node2,edgenum;
 
-	search(edge,n);
+	search();
 	return 0;
 }
