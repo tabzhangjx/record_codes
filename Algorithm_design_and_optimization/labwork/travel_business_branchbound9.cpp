@@ -8,6 +8,37 @@
 #include <queue>
 using namespace std;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 int n;
 class heapnode{
 public:
@@ -40,7 +71,7 @@ inline int heapnode::compareto(heapnode x){
 }
 
 int TSP(int* v){
-
+	
 }
 int main(){
 	cin>>n;
@@ -49,3 +80,10 @@ int main(){
 
 	return 0;
 }
+
+
+
+
+
+
+
