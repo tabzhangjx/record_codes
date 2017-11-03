@@ -19,14 +19,25 @@ int sortfew(int*a,int m,int n){
 }
 
 int search(int* a,int m,int n,int p){
-	
+
+	for(int i=0;i<=n/5;i++){
+		sortfew(a,5*i,)
+	}
 }
 int main(){
 	int n=0;
-	int* line=new int[n];
+	int k=0;
+	cin>>n>>k;
+	int t=(n+4)/5;
+	t=5*t;
+	int* line=new int[t];
 	for(int i=0;i<n;i++){
 		cin>>line[i];
 	}
+	for(int i=n;i<t;i++){
+		line[i]=INT_MAX;
+	}
+	search(line,0,t,k)
 
 
 
