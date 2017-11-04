@@ -1,5 +1,15 @@
-#include<iostream>
+
+#include <iostream>
 using namespace std;
+
+int searchlabel(int* a,int n,int k){
+
+
+}
+
+void sortbylabel(int*a,int lable,int n){
+	
+}
 
 int sortfew(int*a,int m,int n){
 	int min;
@@ -18,26 +28,13 @@ int sortfew(int*a,int m,int n){
 	return m+(n-m+1)/2;
 }
 
-int search(int* a,int m,int n,int p){
-
-	for(int i=0;i<=n/5;i++){
-		sortfew(a,5*i,)
-	}
-}
 int main(){
-	int n=0;
-	int k=0;
+	int n,k;
 	cin>>n>>k;
-	int t=(n+4)/5;
-	t=5*t;
-	int* line=new int[t];
+	int* line=new int[n];
 	for(int i=0;i<n;i++){
-		cin>>line[i];
+		cin>>line[n];
 	}
-	for(int i=n;i<t;i++){
-		line[i]=INT_MAX;
-	}
-	search(line,0,t,k)
 
 
 
