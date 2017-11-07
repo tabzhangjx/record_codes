@@ -2,14 +2,29 @@
 #include <iostream>
 using namespace std;
 
-int 
-int searchlabel(int* a,int n,int k){
-	
-
+int searchlabel(float* a,int n,int k){
+	int i=(n-4)/5;
+	for(int j=0;j<=i;j++){
+		int t=sortfew(a,i*5,i*5+4);
+		float temp=a[i];
+		a[i]=a[t];
+		a[t]=temp;
+	}
+	int t=searchlabel(a,0,i);
+	int label=sortbylabel(a,t,n);
+	if(label==k){
+		return line[label];
+	}
+	else if(label>k){
+		return line[searchlabel(line,n-t-1,k)];
+	}
+	else{
+		return line[searchlabel(line,t,k-t-1)];
+	}
 }
 
-int sortbylabel(int* a,int lable,int n){
-	int tem=a[label];
+int sortbylabel(float* a,int lable,int n){
+	float tem=a[label];
 	int mark=label;
 	int flag=0;
 	int record=0;
@@ -50,8 +65,8 @@ int sortbylabel(int* a,int lable,int n){
 	return record;
 }
 
-int sortfew(int* a,int m,int n){
-	int min;
+int sortfew(float* a,int m,int n){
+	float min;
 	int mark=0;
 	for(int k=0;k<(n-m);k++){
 		min=INT_MAX;
@@ -70,13 +85,19 @@ int sortfew(int* a,int m,int n){
 int main(){
 	int n,k;
 	cin>>n>>k;
-	int* line=new int[n];
+	float* line=new float[n];
 	for(int i=0;i<n;i++){
 		cin>>line[n];
 	}
-
-
-
-
+	int m=(n+1)/2;
+	if(n%2==1){
+		cout<<line[searchlabel(line,n,m)]<<endl;
+	}
+	else{
+		float w=(searchlabel(line,n,m)+searchlabel(line,n,m+1))/2;
+		cout<<w<<endl;
+	}
+	
+	
 	return 0;
 }
