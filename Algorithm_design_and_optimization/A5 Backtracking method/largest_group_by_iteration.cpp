@@ -9,6 +9,7 @@ int max = 0;
 int *vertex = new int[n];
 bool *visited = new bool[n];
 bool edges[1002][1002];
+int *mark=new int[n];
 
 void Copy() {
 	for (int t = 0; t<record_max; t++) {
@@ -28,21 +29,30 @@ bool check(int i) {
 	return true;
 }
 void search_maxgroup() {
-	for (int t = 0; t<n; t++) {
-		if (record_max + n - t < max) {
-			return;
-		}
-		if (check(t) && !visited[t]) {
-			record_vertexs[record_max] = t + 1;
-			record_max++;
-			visited[t] = 1;
-			if (record_max>max) {
-				Copy();
+	int p=0;
+	while(mark[0]<n){
+		for (int t = mark[p]; t<n; t++) {
+			if (record_max + n - t < max) {
+				mark[p]=0;
+				p--;
+				break;
 			}
-			search_maxgroup();
-			record_max--;
-			record_vertexs[record_max] = -1;
-			visited[t] = 0;
+			if (check(t) && !visited[t]) {
+				record_vertexs[record_max] = t + 1;
+				record_max++;
+				visited[t] = 1;
+				if (record_max>max) {
+					Copy();
+				}
+				mark[p]=t;
+				p++;
+			}
+			if(p>=n||t==n-1){
+				mark[p]=0;
+				visited[t]=0;
+				record_vertexs[record_max]=-1;
+				record_max--;
+			}
 		}
 	}
 	return;
@@ -56,6 +66,7 @@ int main() {
 		record_vertexs[i] = -1;
 		vertex[i] = -1;
 		visited[i] = 0;
+		mark[i]=0;
 		for (int j = 0; j<n; j++) {
 			edges[i][j] = edges[j][i] = 0;
 		}
