@@ -1,3 +1,4 @@
+
 #include<iostream>
 using namespace std;
 
@@ -40,8 +41,8 @@ int main() {
 		a[i] = n % 10;
 		n /= 10;
 	}
-	int t = i - 1; 
-	
+	int t = i - 1;
+
 	for (int j = 0; j < i; j++, t--) {
 		line[j] = a[t];
 	}
