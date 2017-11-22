@@ -90,22 +90,24 @@ int main() {
 		cin >> a >> b;
 		cin >> edges[a - 1][b - 1];
 	}
+
 	for (int i = 0; i < n; i++) {
-		mins[i] = NULL;
+		mins[i] = NULL; //nullptr
 		for (int j = 0; j < n; j++) {
 			if ((mins[i] > edges[i][j] || mins[i] == NULL) && edges[i][j] > 0) {
 				mins[i] = edges[i][j];
 			}
 		}
 	}
+
 	search();
 	for (int i = 0; i < n; i++) {
 		cout << vertex[i] << " -> ";
 	}
-	delete visited;
+
+	delete[]visited;
 	delete[]mins;
 	delete[]record_vertex;
 	delete[]vertex;
 	return 0;
-
 }
