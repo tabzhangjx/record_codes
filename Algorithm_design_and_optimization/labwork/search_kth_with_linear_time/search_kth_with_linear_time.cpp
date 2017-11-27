@@ -92,6 +92,22 @@ int searchlabel(float* a, int s, int n/*总数*/, int k) {
 }
 
 int main() {
+	{
+		std::ofstream fout("data.dat");
+		int T = 1000;
+		srand(time(0));
+		fout << T << endl;
+		for (int i = 0; i < T; i++) {
+			int a = rand() % 1000;
+			fout << a << endl;
+			for (int j = 0; j < a; j++) {
+				static int b = rand() % 1010;
+				fout << b << endl;
+			}
+		}
+		fout.close();
+	}
+	{
 	int n;
 	cin >> n;
 	float* a = new float[n];
@@ -107,7 +123,7 @@ int main() {
 		double w = (a[searchlabel(a, 0, n, m)] + a[searchlabel(a, 0, n, m + 1)]) / 2;
 		cout << w << endl;
 	}
-
+}
 
 	return 0;
 }

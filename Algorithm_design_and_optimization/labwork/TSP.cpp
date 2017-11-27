@@ -46,7 +46,7 @@ void search() {
 			record_num++;
 			visited[i] = 1;
 			search();
-			visited[i] = 0;q
+			visited[i] = 0;
 			record_num--;
 			record_vertex[record_num] = -1;
 		}
@@ -90,24 +90,22 @@ int main() {
 		cin >> a >> b;
 		cin >> edges[a - 1][b - 1];
 	}
-
 	for (int i = 0; i < n; i++) {
-		mins[i] = NULL; //nullptr
+		mins[i] = NULL;
 		for (int j = 0; j < n; j++) {
 			if ((mins[i] > edges[i][j] || mins[i] == NULL) && edges[i][j] > 0) {
 				mins[i] = edges[i][j];
 			}
 		}
 	}
-
 	search();
 	for (int i = 0; i < n; i++) {
 		cout << vertex[i] << " -> ";
 	}
-
-	delete[]visited;
+	delete visited;
 	delete[]mins;
 	delete[]record_vertex;
 	delete[]vertex;
 	return 0;
+
 }
