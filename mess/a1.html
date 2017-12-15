@@ -1,0 +1,52 @@
+<html>
+
+<head><title>加法计算器</title>
+<script  type="text/vbscript">
+sub calc()
+result.value=CInt(num1.value)+CInt(num2.value)
+end sub
+dim a as int
+</script>
+</head>
+
+<body>
+请输入一个整数&nbsp&nbsp<input type="text" name="num1" value=0><br>
+请输入一个整数&nbsp&nbsp<input type="text" name="num2" value=0><br>
+<input type="submit" value="提交两个整数" onclick="calc()"><br>
+相加结果为&nbsp&nbsp<input type="text" name="result" ><br>
+</body>
+
+</html>
+
+<html>
+
+<head><title>拼数</title>
+<script  type="text/vbscript">
+sub calc()
+dim a,b,c,d,e
+a=Cint(num1.value)
+b=Cint(num2.value)
+d=cdbl(num1.value)
+e=cdbl(num2.value)
+if a>99 or a<=9 or b>99 or b<=9 or a<>d or b<>e then 
+c="输入不符合要求"
+elseif a>b then
+c=num1.value+num2.value
+else
+c=num2.value+num1.value
+end if
+result.value=c
+end sub
+</script>
+</head>
+
+<body>
+<FONT SIZE="12" COLOR="RED">拼数游戏</FONT>
+<FONT SIZE="12" COLOR="blue">(请输入两个二位整数)</FONT><br>
+请输入一个二位整数&nbsp&nbsp<input type="text" name="num1" value=0><br>
+请输入一个二位整数&nbsp&nbsp<input type="text" name="num2" value=0><br>
+<input type="submit" value="提交数据" onclick=calc()><br>
+拼数结果为&nbsp&nbsp<input type="text" name="result" ><br>
+</body>
+
+</html>
