@@ -1,1 +1,10 @@
-#include<>
+#include<stdio.h>
+
+int main(){
+	char *p;
+	p=NULL;
+	printf("Location 0: contains %d/n", *p);
+
+
+	return 0;
+}
