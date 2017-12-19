@@ -1,10 +1,17 @@
 #include<stdio.h>
 
 int main(){
-	char *p;
-	p=NULL;
-	printf("Location 0: contains %d/n", *p);
-
-
+	bool a=true;
+	bool b=1;
+	int c=422;
+	if(a){
+		printf("1 \n");
+	}
+	if(b){
+		printf("2 \n");
+	}
+	if(c){
+		printf("3 \n");
+	}
 	return 0;
 }
