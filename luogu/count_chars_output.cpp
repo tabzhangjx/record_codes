@@ -21,13 +21,31 @@ int main(){
     		max=s[i];
     	}
     }
+    int *record=new int[max];
+    for(int i=1;i<=max;i++){
+    	record[i]=0;
+    	for(int j=0;j<26;j++){
+    		if(s[j]>=i){
+    			record[i]=j;
+    		}
+    	}
+    }
     while(max>=0){
-    	for(int i=0;i<26;i++){
-    		if(s[i]>max){
-    			std::cout<<'*'<<' ';
+    	for(int i=0;i<52;i++){
+    		if(i%2==1){
+    			std::cout<<' ';
     		}
     		else{
-    			std::cout<<"  ";
+    			if(i==(record[max]*2)){
+    				std::cout<<std::endl;
+    				break;
+    			}
+    			if(s[i]>=max){
+    				std::cout<<'*';
+    			}
+    			else{
+    				std::cout<<" ";
+    			}
     		}
     	}
         std::cout<<std::endl;
