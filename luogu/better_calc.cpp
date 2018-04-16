@@ -12,6 +12,7 @@ char c;
 void read(int *i){
     int m=0;
     int label=1;
+    int flag=0;
     if(funcs[*i]=='+'||funcs[*i]=='-'){
         label*=(funcs[*i]-44);
         label*=-1;
@@ -19,19 +20,23 @@ void read(int *i){
     }
     while(1){
         if(isdigit(funcs[*i])){
+            if(funcs[*i]=='0') flag=1;
             m=m*10+funcs[*i]-'0';
             (*i)++;
         }
         else if(isalpha(funcs[*i])){
             c=funcs[*i];
-            if(m!=0) para[count1++]=m*label*mark;
-            else para[count1++]=1*mark;
+            if(m!=0||flag) para[count1++]=m*label*mark;
+            else para[count1++]=1*mark*label;
             (*i)++;
             return;
         }
         else if(funcs[*i]=='+'||funcs[*i]=='-'||funcs[*i]=='='||funcs[*i]=='\0'){
             ele[count2++]=m*label*mark;
             return;
+        }
+        else{
+            *i=*i+1;
         }
     }
     return;
@@ -54,7 +59,7 @@ int main(){
         ele[0]+=ele[i];
     }
     if(ele[0]==0){
-        std::cout<<"0.000";
+        std::cout << c << "=0.000";
     }
     else{
         double t1=ele[0];
