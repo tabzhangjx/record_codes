@@ -69,3 +69,21 @@ int Partition(int *data, int lo, int hi){
     }
     return i;
 }
+
+
+void QuickSort(int *data, int lo, int hi){
+    if (lo >= hi) return;
+    int i=lo, j=hi;
+    int x = data[(i + j) / 2];
+    while (i <= j) {
+        while (x > data[i]) i++;
+        while (x < data[j]) j--;
+        if (i <= j) {
+            swap(data, i, j);
+            i++;
+            j--;
+        }
+    }
+    if(lo<j) QuickSort(data, lo, j);
+    if(i<hi) QuickSort(data, i, hi);
+}
