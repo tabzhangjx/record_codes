@@ -6,7 +6,6 @@ char str[1000];
 void out(int i){
     int label=(p3==1?1:-1);
     int t=str[i+1-label];
-    std::cout<<(str[i]);
     for(t=t+1*label; (char)(t)!=str[i+1+label]; t+=label){
     	for(int k=0;k<p2;k++){
     		if(p1==1) std::cout<<(char)(t);
@@ -14,24 +13,33 @@ void out(int i){
     		else if(p1==3) std::cout<<'*';
     	}
     }
-    std::cout<<(str[i+2]);
 }
 
 int main(){
     std::cin>>p1>>p2>>p3;
     std::cin>>str[0];
     std::cin.getline(str+1, 1000);
-    for(int i=0; str[i]!='\0';){
-        if(str[i+1]=='-'){
-            if(str[i]>=str[i+2]) std::cout<<str[i]<<'-'<<str[i+2];
-            else if(str[i+2]==str[i]+1) std::cout<<str[i]<<str[i+2];
-            else out(i);
-            i+=3;
+    std::cout<<str[0];
+    int i;
+    for(i=1; str[i+1]!='\0';i++){
+        if(str[i]=='-'){
+            if(
+                (str[i-1]>=str[i+1])||
+                    (
+                        (
+                            !(std::isdigit(str[i-1])&&std::isdigit(str[i+1]))
+                        )&&
+                        (
+                            !(std::isalpha(str[i-1])&&std::isalpha(str[i+1]))
+                        )
+                    )
+                )
+                std::cout<<'-';
+            else if(str[i-1]==(str[i+1]-1)) i=i;
+            else out(i-1);
         }
-        else{
-            std::cout<<str[i];
-            i++;
-        }
+        else std::cout<<str[i];
     }
+    std::cout<<str[i];
     return 0;
 }
