@@ -10,16 +10,19 @@ struct student{
     bool western;
     int paper;
     int schoolarship;
+    int order;
 }ss[100];
 
 bool cmp(student a, student b){
-	return a.schoolarship>b.schoolarship;
+	if(a.schoolarship!=b.schoolarship)return a.schoolarship>b.schoolarship;//?
+    else return a.order<b.order;
 }
 
 int main(){
     int N;
     std::cin>>N;
     for(int i=0;i<N;i++){
+        ss[i].order=i;
         scanf("%s %d", ss[i].name, &ss[i].score);
         std::cin>>ss[i].class_score;
         char temp;
