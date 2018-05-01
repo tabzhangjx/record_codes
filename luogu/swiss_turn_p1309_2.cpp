@@ -1,17 +1,18 @@
 #include <iostream>
 #include <algorithm>
+
 int N, R, Q;
 int count=0;
 struct player{
     int s;
     int w;
     int order;
-}ps[100005];
+}ps[200100];
 
-player ps1[50005];
-player ps2[50005];
+player ps1[100050];
+player ps2[100050];
 
-bool cmp(player a, player b){
+bool cmp(const player &a, const player &b){
     if(a.s!=b.s) return a.s>b.s;
     else return a.order<b.order;
 }
