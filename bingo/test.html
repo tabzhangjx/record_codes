@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>hhhh</title>
+</head>
+<body>
+    <input type="text" name="tttt">
+    <script type="text/javascript">
+        const Query =(query) =>fetch('http://120.25.205.159:3000', {
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify({
+                query,
+            })
+        });
+        Query('query {members{name,number,gender,id,isStaff}}').then(function (v){console.log(v.json())});
+    </script>
+<script type="text/javascript" src="js/main.js"/>
+<br/>
+</body>
+</html>

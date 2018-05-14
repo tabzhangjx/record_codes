@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link href="css/main.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="js/sql.js"></script>
+	<script type="text/javascript" src="js/pinyin.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<title>Bingo system</title>
+</head>
+<body>
+	<header>
+		<h1>Bingo</h1>
+	</header>
+	<div id="body">
+		<div id="nav">
+			<div class="button" id="buybtn">下单</div>
+			<div class="button" id="regbtn">注册</div>
+			<div class="button" id="rmbtn">充值</div>
+			<div class="button" id="modifybtn">修改</div>
+		</div>
+		<div class="section" id="buy">
+			<div id="left1">
+				<div id="bigclass">
+					<!--head>showproduct</head-->
+					<p>产品大类</p>
+					<table id="tableofbigclass">
+					</table>
+				</div>
+				<div id="detailproduct" >
+					<!--head>showproduct</head-->
+					<p>产品名称</p>
+					<table id="tableofdetailproduct">
+					</table>
+				</div>
+			</div>
+			<div id="select_or">
+				<form id="formofselect">
+					请输入检索条件:<br>
+					<input type="text" name="judge" hint="(姓名／手机号／卡号)" id="input_1">
+					<div id="select_or2">
+						<ol id="list">
+						</ol>
+					</div>
+				</form> 
+			</div>
+			<div id="themember">
+				<!--head>showproduct</head-->
+				<p>会员</p>
+				<table id="tableofmember">
+					<tr>
+						<td>姓名</td><td id="td1"></td>
+					</tr>
+					<tr>
+						<td>性别</td><td id="td2"></td>
+					</tr>
+					<tr>
+						<td>生日</td><td id="td3"></td>
+					</tr>
+					<tr>
+						<td>余额</td><td id="td4"></td>
+					</tr>
+					<tr>
+						<td>员工</td><td id="td5"></td>
+					</tr>
+					<tr>
+						<td>卡号</td><td id="td6"></td>
+					</tr>
+					<tr>
+						<td>手机</td><td id="td7"></td>
+					</tr>
+				</table>
+			</div>
+			<div id="theorder">
+				<table id="tableoforder">
+					<tr>
+						<th>产品名称</th>
+						<th>价格</th>
+						<th>减少</th>
+						<th>数量</th>
+						<th>增加</th>
+					</tr>
+				</table>
+				<form>
+					<br>
+					<input type="submit" value="Submit" id="submit1" onclick="return false">
+				</form>
+			</div>
+		</div>
+		<div class="section" id="reg">
+			<form id="formofreg">
+				Member name:<br>
+				<input type="text" id="username">
+				<br>
+				Member tel:<br>
+				<input type="text" id="tel">
+				<br>
+				<label><input type="radio" name="sex" value="MALE" checked>Male</label>
+				<br>
+				<label><input type="radio" name="sex" value="FEMALE">Female</label>
+				<br>
+				<label><input type="radio" name="sex" value="UNKNOWN">Other</label>
+				<br>
+				Member card:<br>
+				<input type="text" id="number">
+				<br>
+				Member birth:<br>
+				<input type="text" id="birth">
+				<br>
+				<label><input type="radio" name="staff" value="isStaff" checked>isStaff</label>
+				<br>
+				<label><input type="radio" name="staff" value="notStaff">notStaff</label>
+				<br>
+				Member balance:<br>
+				<input type="text" id="balance">
+				<br>
+				<input type="submit" value="Submit" id="submit2" onclick="return false">
+			</form> 
+		</div>
+		<div class="section" id="rm">
+			<div id="select_or3">
+				<form>
+					请输入检索条件:<br>
+					<input type="text" name="judge" hint="(姓名／手机号／卡号)" id="input_2">
+					<ol id="list2">
+					</ol>
+				</form> 
+			</div>
+			<div id="themember2">
+				<!--head>showproduct</head-->
+				<p>会员</p>
+				<table id="tableofmember2">
+					<tr>
+						<td>姓名</td><td id="td12">产品</td>
+					</tr>
+					<tr>
+						<td>性别</td><td id="td22">产品</td>
+					</tr>
+					<tr>
+						<td>生日</td><td id="td32">产品</td>
+					</tr>
+					<tr>
+						<td>余额</td><td id="td42">产品</td>
+					</tr>
+					<tr>
+						<td>员工</td><td id="td52">产品</td>
+					</tr>
+					<tr>
+						<td>卡号</td><td id="td62">产品</td>
+					</tr>
+				</table>
+			</div>
+			<div id="input_money">
+				请输入金额：<br>
+				<input type="text" name="money" hint="(RMB)" id="input_3">
+				<br>
+				<input type="submit" value="Submit" id="submit3">
+			</div>
+		</div>
+		<div class="section" id="modify">
+			<div id="password_modify">
+				请输入口令：<br>
+				<input type="text" name="money" hint="(RMB)" id="input_modify_passwprd">
+				<br>
+				<input type="submit" value="Submit" id="submit_modify_passwprd">
+			</div>
+			<div id="mutation_data">
+				
+			</div>
+		</div>
+	</div>
+	<footer>
+		Bingo
+	</footer>
+</body>
+</html>

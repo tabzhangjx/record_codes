@@ -1,0 +1,192 @@
+header {
+    background-color: black;
+    color: white;
+    clear: both;
+    text-align: center;
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+}
+
+#nav {
+    float: left;
+    position:absolute;
+    top:8%;
+    bottom: 0;
+    left:1%;
+    width:200px;
+    border-right: 10px solid black;
+}
+.button {
+    height: 80px;
+    width: 150px;
+    text-align: center;
+    margin: 20px;
+    overflow: hidden;
+    font: 1.5em/80px "Microsoft YaHei UI";
+    border-radius: 10px;
+    color:white;
+    background: black;
+}
+.section {
+    position: absolute;
+    top:10%;
+    left:220px;
+    right:1%;
+    bottom:32px;
+    display: none;
+}
+#bigclass{
+    position:absolute;
+    top:10%;
+    left:10%;
+    right:80%;
+    overflow: auto;
+    height: 400px;
+}
+#tableofbigclass{
+    width:100%;
+}
+#detailproduct{
+    position:absolute;
+    top:10%;
+    left:20%;
+    right:70%;
+    overflow: auto;
+    height: 400px;
+}
+#tableofdetailproduct{
+    width:100%;
+}
+#theorder{
+   position:absolute;
+   top:70%;
+   left:10%;
+   right:10%;
+   overflow: auto;
+   height: 200px;
+}
+#tableoforder{
+    background-color:#eeeeee;
+    width:100%;
+}
+#select_or{
+    position:absolute;
+    top:10%;
+    left:40%;
+    right:45%;
+    height: 400px;
+    overflow: hidden;
+}
+#select_or2{
+    position:absolute;
+    top:45px;
+    left:0;
+    right:0;
+    overflow: hidden;
+    height: 355px;
+}
+#list{
+    position:absolute;
+    top:0;
+    left:-38px;
+    right:0;
+    overflow: auto;
+    height: 355px;
+}
+#themember{
+    position:absolute;
+    top:10%;
+    left:70%;
+    right:5%;
+    overflow: auto;
+    height: 450px;
+}
+#tableofmember{
+    position:absolute;
+    top:54px;
+    left:0;
+    right:0;
+    overflow: auto;
+    height: 390px;
+    width:100%;
+}
+th,td,li{
+    border: 1px solid white;
+    background: #000000;
+    border-radius: 5px;
+}
+table,ol{
+    color: white;
+}
+#reg{
+    position:absolute;
+    top:20%;
+    left:47%;
+    right:35%;
+    overflow: auto;
+    height: 500px;
+}
+#formofreg{
+    width:100%;
+}
+footer {
+    background-color: black;
+    color: white;
+    clear: both;
+    text-align: center;
+    position:absolute;
+    bottom: 0;
+    left:0;
+    right:0;
+}
+body{
+    list-style: none;
+}
+#select_or3{
+    position:absolute;
+    top:10%;
+    left:40%;
+    right:45%;
+    height: 400px;
+    overflow: hidden;
+}
+#themember2{
+    position:absolute;
+    top:10%;
+    left:70%;
+    right:5%;
+    overflow: auto;
+    height: 450px;
+}
+#input_money{
+    position:absolute;
+    top:10%;
+    left:20%;
+    right:60%;
+    overflow: auto;
+    height: 400px;
+}
+#bigclass {
+    float: left;
+}
+
+#detailproduct {
+    float: left;
+}
+
+#left1 {
+    float: left;
+}
+
+#themember {
+    float: right;
+}
+
+#modify{
+    position:absolute;
+    top:40%;
+    left:48%;
+    
+}
