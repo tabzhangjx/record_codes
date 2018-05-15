@@ -1,63 +1,41 @@
 #include <bits/stdc++.h>
+
 #define ll long long
 
 int n, ss[30], pa=-1;
-ll DPS[30][30], path[3][30], re=-1;
-bool visited[30];
-
-ll dfs(int le, int ri){
+ll DPS[30][30], re=-1;
+int PAT[30][30];
+ll dfs(int le, int ri, int locals, int ttt){
     if(DPS[le][ri]!=-1) return DPS[le][ri];
-    if(le==ri) return ss[le];
-    if(le>ri) return 1;
+    if(le==ri){
+        DPS[le][ri]=ss[le];
+        return ss[le];
+    }
+    if(le>ri){
+        DPS[le][ri]=1;
+        return 1;
+    }
     ll temp=1;
     int mark=-1;
     for(int i=le;i<=ri;i++){
-        temp=1;
-        if(DPS[le][i-1]!=-1)
-            temp*=DPS[le][i-1];
-        else{
-            DPS[le][i-1]=dfs(le,i-1);
-            temp*=DPS[le][i-1];
+        if(i==4){
+            i=i;
         }
-        if(DPS[i+1][ri]!=-1)
-            temp*=DPS[i+1][ri];
-        else{
-            DPS[i+1][ri]=dfs(i+1,ri);
-            temp*=DPS[i+1][ri];
-        }
-        temp+=ss[i];
+        temp=dfs(le, i-1, i, 0)*dfs(i+1, ri, i, 1)+ss[i];
         if(temp>DPS[le][ri]){
             DPS[le][ri]=temp;
             mark=i;
         }
     }
-    if(path[2][mark]<DPS[le][ri]){
-        path[2][mark]=DPS[le][ri];
-    }
-    return temp;
+    PAT[le][ri]=mark;
+    return DPS[le][ri];
 }
 
-void print_path(int pas, int le, int ri){
-    if(le>ri) return;
-    std::cout<<pas<<' ';
-    pa=-1;
-    re=-1;
-    for(int i=le;i<pas;i++){
-        if(path[2][i]>re){
-            re=path[2][i];
-            pa=i;
-        }
-    }
-    print_path(pa, le, pas-1);
-    pa=-1;
-    re=-1;
-    for(int i=pas+1;i<=ri;i++){
-        if(path[2][i]>re){
-            re=path[2][i];
-            pa=i;
-        }
-    }
-    print_path(pa, pas+1, ri);
+void print_path(int le, int ri){
+    if(le>ri||PAT[le][ri]<1) return;
+    std::cout<<PAT[le][ri]<<' ';
+    print_path(le, PAT[le][ri]-1);
+    print_path(PAT[le][ri]+1, ri);
 }
 
 int main(){
@@ -67,19 +45,12 @@ int main(){
     for(int i=0;i<30;i++){
         for(int j=0;j<30;j++){
             DPS[i][j]=-1;
+            PAT[i][j]=-1;
         }
-        path[0][i]=-1;
-        path[1][i]=-1;
-        visited[i]=1;
+        PAT[i][i]=i;
     }
-    dfs(1, n);
+    dfs(1, n, 0, 1);
     std::cout<<DPS[1][n]<<std::endl;
-    for(int i=1;i<=n;i++){
-        if(path[2][i]>re){
-            re=path[2][i];
-            pa=i;
-        }
-    }
-    print_path(pa, 1, n);
+    print_path(1, n);
     return 0;
 }
