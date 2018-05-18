@@ -1,35 +1,14 @@
 #include<stdio.h>
 #include<string.h>
+#include<math.h>
 
-double fun(int a[], int n, int *max, int *min){
-  int i, sum = 0;
-  *max = 0;
-  *min = 0;
-  int max1 = a[0];
-  int min1 = a[0];
-  for (i = 0; i < n; i++){
-    sum = sum + a[i];
-    if (a[i] > max1) { 
-      *max = i; 
-      max1 = a[i];
-    }
-    if (a[i] < min1) {
-      *min = i;
-      min1 = a[i];
-      }
-  }
-  return sum / n;
-}
+
 int main(){
-  int b[1000], o, i ;
-  int *ma, *mi;
-  scanf("%d", &o);
-  for (i = 0; i < o; i++){
-    scanf("%d", &b[i]);
+  double b[16]={0.15,0.12,0.01,0.08,0.09,0.16,0.03,0.01,0.06,0.13,0.07,0.11,0.08,0.01,0.03,0.06};
+  double sum=0;
+  for(int i=0;i<16;i++){
+    sum+=(b[i]-0.075)*(b[i]-0.075);
   }
-  double ave=fun(b, o, ma, mi);
-  printf("%d/n", b[*ma]);
-  printf("%d/n", b[*mi]);
-  printf("%lf/n", ave);
+  printf("%lf", sum/15);
   return 0;
 }
