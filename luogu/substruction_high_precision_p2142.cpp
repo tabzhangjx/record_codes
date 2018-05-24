@@ -14,6 +14,7 @@ bool cmp(const pe &a, const pe &b){
 
 class high_precision{
 public:
+	int sign;
     int w[30010];//低位在左
     int count;
     high_precision(){};
@@ -28,7 +29,19 @@ public:
     friend ostream& operator<<(ostream &out, high_precision &c);
 };
 
+high_precision::~high_precision(){
+	sign=0;
+    for(int i=1;i<30010;i++)
+        w[i]=0;
+    count=0;
+}
+
 high_precision::high_precision(int a){
+	sign=0;
+	if(a<0){
+		sign=1;
+		a=-a;
+	}
     for(int i=1;i<30010;i++)
         w[i]=0;
     int i=0;
@@ -40,13 +53,16 @@ high_precision::high_precision(int a){
     }
 }
 
-high_precision::~high_precision(){
-    for(int i=1;i<30010;i++)
-        w[i]=0;
-    count=0;
-}
-
 high_precision high_precision::operator+(const high_precision a){
+	if(a.sign==0&&this->sign==1){
+		return a-this;
+	}
+	else if(a.sign==1&&this->sign==0){
+		return this-a;
+	}
+	else if(a.sign==1&&this->sign==1){
+		
+	}
     high_precision m;
     for(int i=0;i<this->count||i<a.count;i++){
         m.w[i+1]=m.w[i+1]+(m.w[i+1]+this->w[i]+a.w[i])/10;
