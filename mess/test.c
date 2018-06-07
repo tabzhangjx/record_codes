@@ -2,13 +2,34 @@
 #include<string.h>
 #include<math.h>
 
+enum gender{male, female};
+struct student{
+	int id_num;
+	char name[20];
+	enum gender sss;
+}students[100];
+
+void insert(int i){
+	printf("\nplz input id(int), name(char) and gender(male:1,female:2):\n");
+	int temp;
+	scanf("%d%s%d", &students[i].id_num, students[i].name, &temp);
+	if(temp==1) students[i].sss=male;
+	else students[i].sss=female;
+}
+
+void display(int i){
+	printf("name: %s\nid number: %d\ngender: ", students[i].name, students[i].id_num);
+	if(students[i].sss==male) printf("male\n");
+	else printf("female\n");
+}
 
 int main(){
-  double b[16]={0.15,0.12,0.01,0.08,0.09,0.16,0.03,0.01,0.06,0.13,0.07,0.11,0.08,0.01,0.03,0.06};
-  double sum=0;
-  for(int i=0;i<16;i++){
-    sum+=(b[i]-0.075)*(b[i]-0.075);
-  }
-  printf("%lf", sum/15);
-  return 0;
+  	int n;
+  	printf("please input thr number of students: \n");
+  	scanf("%d", &n);
+  	for(int i=0;i<n;i++){
+  		insert(i);
+  		display(i);
+  	}
+ 	return 0;
 }
