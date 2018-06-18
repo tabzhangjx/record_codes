@@ -9,8 +9,12 @@ int main(){
         else c2++;
     }
     //std::cout<<c1;
-    if(c1<9){
+    if(c1<9&&c2==0){
         std::cout<<"-1";
+        return 0;
+    }
+    else if(c1<9&&c2>0){
+    	std::cout<<"0";
         return 0;
     }
     else{
