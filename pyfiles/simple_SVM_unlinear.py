@@ -9,8 +9,6 @@ from sklearn.metrics import confusion_matrix
 iris = datasets.load_iris()
 X = iris.data
 y = iris.target
-print iris.target_names
-
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=1/3.)
 
@@ -23,7 +21,6 @@ param_grid = {'C':[1e1,1e2,1e3, 5e3,1e4,5e4],
               'gamma':[0.0001,0.0008,0.0005,0.008,0.005,]}
 clf = GridSearchCV(svm.SVC(kernel='rbf',class_weight='balanced'),param_grid,cv=10)
 clf = clf.fit(X_train_std,y_train)
-print clf.best_estimator_
 
 svm.SVC(C=10.0, cache_size=200, class_weight='balanced', coef0=0.0,
   decision_function_shape=None, degree=3, gamma=0.005, kernel='rbf',
