@@ -30,11 +30,15 @@ void fast_memset(void *s, char c, size_tt n){
 	int i;
 
 	//put i+8 out
-	n-=8;
-	for(i=0; i<=n; i+=8){
+	n-=16;
+
+	//2*1
+	for(i=0; i<=n; i+=16){
+		*(p++) = m;
 		*(p++) = m;
 	}
-	n+=8;
+	n+=16;
+
 	temp = (unsigned char*) p;
 	for(i = i;i<n;i++){
 		*(temp++) = c;
@@ -59,4 +63,4 @@ int main(){
 	return 0;
 }
 
-//ave 3.1
+//ave 2.09

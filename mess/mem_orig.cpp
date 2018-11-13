@@ -28,13 +28,9 @@ void fast_memset(void *s, char c, size_tt n){
 	}
 	p = (unsigned long*) temp;
 	int i;
-
-	//put i+8 out
-	n-=8;
-	for(i=0; i<=n; i+=8){
+	for(i=0; (i+8)<=n; i+=8){
 		*(p++) = m;
 	}
-	n+=8;
 	temp = (unsigned char*) p;
 	for(i = i;i<n;i++){
 		*(temp++) = c;
