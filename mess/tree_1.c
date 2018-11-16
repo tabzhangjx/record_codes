@@ -1,6 +1,7 @@
 #include <stdio.h>
 #define ll long long;
 
+//fvwfv
 int BTreeCount(struct BTreeNode* BT){
     ll sum=0;
     if(isleaf(BT)) return *BT.num;
