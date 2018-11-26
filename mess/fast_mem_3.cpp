@@ -1,7 +1,7 @@
 #include <iostream>
 #include <ctime>
 #include <unistd.h>
-#define N 1000000000
+#define N 100000
 typedef unsigned int size_tt;
 using namespace std;
 
@@ -33,14 +33,16 @@ void fast_memset(void *s, char c, size_tt n){
 
 	//2*2
 	unsigned long *p2 = p1 + 1;
-	temp = (unsigned char*) p;
+	temp = (unsigned char*) p1;
 	int i;
 	//put i+8 out
 	n-=24;
 	//2*2
 	for(i=0; i<=n; i+=16){
-		*((p1++)++) = m;
-		*((p2++)++) = m;
+		*p1 = m;
+		*p2 = m;
+		p1+=2;
+		p2+=2;
 	}
 	n+=24;
 	i+=8;

@@ -1,7 +1,7 @@
 #include <iostream>
 #include <ctime>
 #include <unistd.h>
-#define N 1000000000
+#define N 100000
 typedef unsigned int size_tt;
 using namespace std;
 
@@ -47,7 +47,7 @@ void run(){
 	begin = clock();
 	fast_memset(a, 0, N);
 	end = clock();
-	double time = double(end - begin)/100000;
+	double time = double(end - begin)/10;
     cout<<time<<endl;
 }
 
